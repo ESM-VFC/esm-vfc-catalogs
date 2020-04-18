@@ -1,0 +1,182 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+      - module: intake_xarray
+
+sources:
+
+  NEMO ORCA05 FOCI Test grid_T:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_grid_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_grid_T.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test grid_U:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_grid_U.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_grid_U.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test grid_V:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_grid_V.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_grid_V.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test grid_W:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_grid_W.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_grid_W.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test icemod:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_icemod.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_icemod.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test ptrc_T:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20120101_20121231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20130101_20131231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20140101_20141231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20150101_20151231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20160101_20161231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20170101_20171231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20180101_20181231_ptrc_T.nc"
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20190101_20191231_ptrc_T.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test mesh_mask:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath: "https://zenodo.org/record/3755721/files/mesh_mask.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
+
+  NEMO ORCA05 FOCI Test new_maskglo:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
+)'
+    args:
+      urlpath: "https://zenodo.org/record/3755721/files/new_maskglo.nc"
+      storage_options:
+        block_size: 0
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+    cache:
+      - argkey: urlpath
+        type: file
