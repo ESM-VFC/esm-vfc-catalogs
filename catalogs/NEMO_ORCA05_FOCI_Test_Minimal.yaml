@@ -7,7 +7,7 @@ plugins:
 
 sources:
 
-  NEMO ORCA05 FOCI Test Minimal grid_T:
+  NEMO ORCA05 FOCI Test grid_T:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -22,7 +22,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal grid_U:
+  NEMO ORCA05 FOCI Test grid_U:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -37,7 +37,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal grid_V:
+  NEMO ORCA05 FOCI Test grid_V:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -52,7 +52,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal grid_W:
+  NEMO ORCA05 FOCI Test grid_W:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -67,7 +67,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal icemod:
+  NEMO ORCA05 FOCI Test icemod:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -82,7 +82,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal ptrc_T:
+  NEMO ORCA05 FOCI Test ptrc_T:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -97,7 +97,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal mesh_mask:
+  NEMO ORCA05 FOCI Test mesh_mask:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
@@ -112,7 +112,7 @@ sources:
       - argkey: urlpath
         type: file
 
-  NEMO ORCA05 FOCI Test Minimal new_maskglo:
+  NEMO ORCA05 FOCI Test new_maskglo:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721
 )'
