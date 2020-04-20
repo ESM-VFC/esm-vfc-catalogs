@@ -1,0 +1,112 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+      - module: intake_xarray
+
+sources:
+
+  NEMO_ORCA05_FOCI_Test_Minimal_grid_T:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_T.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_T.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_grid_U:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_U.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_U.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_grid_V:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_V.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_V.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_grid_W:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_W.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_W.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_icemod:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_icemod.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_icemod.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_ptrc_T:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_ptrc_T.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_ptrc_T.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_mesh_mask:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/mesh_mask.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/mesh_mask.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  NEMO_ORCA05_FOCI_Test_Minimal_new_maskglo:
+    driver: netcdf
+    description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
+    metadata:
+      data_urls:
+        - "https://zenodo.org/record/3755721/files/new_maskglo.nc"
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal_Minimal/new_maskglo.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
