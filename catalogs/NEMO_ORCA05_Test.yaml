@@ -9,7 +9,7 @@ sources:
 
   NEMO_ORCA05_Test_grid_T:
     driver: netcdf
-    description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)
+    description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
       data_urls:
         - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_T.nc"

@@ -106,7 +106,7 @@ sources:
         - "https://zenodo.org/record/3755721/files/new_maskglo.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal_Minimal/new_maskglo.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/new_maskglo.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords

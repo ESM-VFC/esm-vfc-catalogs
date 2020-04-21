@@ -15,7 +15,7 @@ sources:
         - "https://zenodo.org/record/3634491/files/GYRE_5d_00010101_00011230_grid_T.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_test/GYRE_5d_00010101_00011230_grid_T.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_Test/GYRE_5d_00010101_00011230_grid_T.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -28,7 +28,7 @@ sources:
         - "https://zenodo.org/record/3634491/files/GYRE_5d_00010101_00011230_grid_U.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_test/GYRE_5d_00010101_00011230_grid_U.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_Test/GYRE_5d_00010101_00011230_grid_U.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -41,7 +41,7 @@ sources:
         - "https://zenodo.org/record/3634491/files/GYRE_5d_00010101_00011230_grid_V.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_test/GYRE_5d_00010101_00011230_grid_V.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_Test/GYRE_5d_00010101_00011230_grid_V.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -54,7 +54,7 @@ sources:
         - "https://zenodo.org/record/3634491/files/GYRE_5d_00010101_00011230_grid_W.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_test/GYRE_5d_00010101_00011230_grid_W.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_Test/GYRE_5d_00010101_00011230_grid_W.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -67,7 +67,7 @@ sources:
         - "https://zenodo.org/record/3634491/files/mesh_mask.nc"
     args:
       urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_test/mesh_mask.nc"
+        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_GYRE_Test/mesh_mask.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
