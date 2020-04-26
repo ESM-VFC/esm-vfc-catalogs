@@ -1,4 +1,3 @@
-import logging
 import os
 from pathlib import Path
 import pycurl
@@ -31,13 +30,13 @@ def fetch_zenodo_data(catalog_entry, force_download=False):
         output_file = output_dir / file_name
 
         if output_file.exists() and not force_download:
-            logging.info(f"No need to download {output_file}")
+            print(f"No need to download {output_file}")
         else:
-            logging.info(f"downloading {output_file} ... ")
+            print(f"downloading {output_file} ... ", end="")
             with open(output_file, "wb") as f:
                 c = pycurl.Curl()
                 c.setopt(c.URL, url)
                 c.setopt(c.WRITEDATA, f)
                 c.perform()
                 c.close()
-            logging.info(f"downloading {output_file} ... done")
+            print("... done")
