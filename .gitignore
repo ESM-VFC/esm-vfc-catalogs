@@ -4,3 +4,6 @@ data_store
 esm_vfc_data_store
 __pycache__
 *.pyc
+build
+*.egg-info
+dist
