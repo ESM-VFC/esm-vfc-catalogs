@@ -1,0 +1,52 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+    - module: intake_pangaeapy
+
+sources:
+
+  M85_1_bottles:
+    driver: pangaeapy
+    description: |
+      Kieke, Dagmar; Steinfeldt, Reiner (2015): Physical oceanography,
+      CFC-11, and CFC-12 measured on water bottle samples during METEOR
+      cruise M85/1. PANGAEA, https://doi.org/10.1594/PANGAEA.854070
+    args:
+      pangaea_doi: "10.1594/PANGAEA.854070"
+
+  M85_2_bottles:
+    driver: pangaeapy
+    description: |
+      Karstensen, Johannes; Jochumsen, Kerstin; Quadfasel, Detlef (2014):
+      Physical oceanography during METEOR cruise M85/2. IFM-GEOMAR
+      Leibniz-Institute of Marine Sciences, Kiel University, PANGAEA,
+      https://doi.org/10.1594/PANGAEA.836115
+    args:
+      pangaea_doi: "10.1594/PANGAEA.836115"
+
+  M106_bottles:
+    driver: pangaeapy
+    description: |
+      Krahmann, Gerd (2016): Physical oceanography during METEOR cruise M106.
+      PANGAEA, https://doi.org/10.1594/PANGAEA.869361
+    args:
+      pangaea_doi: "10.1594/PANGAEA.869361"
+
+  M120_bottles:
+    driver: pangaeapy
+    description: |
+      Kopte, Robert; Dengler, Marcus (2016): Physical oceanography during
+      METEOR cruise M120. PANGAEA, https://doi.org/10.1594/PANGAEA.868654
+    args:
+      pangaea_doi: "10.1594/PANGAEA.868654"
+
+  M90_bottles:
+    driver: pangaeapy
+    description: |
+      Krahmann, Gerd (2014): Physical oceanography during METEOR cruise M90.
+      GEOMAR - Helmholtz Centre for Ocean Research Kiel, PANGAEA,
+      https://doi.org/10.1594/PANGAEA.830245
+    args:
+      pangaea_doi: "10.1594/PANGAEA.830245"
