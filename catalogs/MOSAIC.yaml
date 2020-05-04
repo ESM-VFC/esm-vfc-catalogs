@@ -1,0 +1,18 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+    - module: intake_pangaeapy
+
+sources:
+
+  PS122_1_master_track:
+    driver: pangaeapy
+    description: |
+      Rex, Markus (2020): Links to master tracks in different resolutions of
+      POLARSTERN cruise PS122/1, Tromsø - Arctic Ocean, 2019-09-20 - 2019-12-13.
+      Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research,
+      Bremerhaven, PANGAEA, https://doi.org/10.1594/PANGAEA.911224
+    args:
+      pangaea_doi: "10.1594/PANGAEA.911224"
