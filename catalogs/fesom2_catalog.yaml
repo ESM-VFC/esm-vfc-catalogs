@@ -1,0 +1,30 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+    - module: intake-xarray
+
+sources:
+
+  FESOM2_Pi_mesh_a_ice:
+    driver: netcdf
+    metadata:
+      zenodo_doi: 10.5281/zenodo.3819896
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_Pi_mesh/a_ice.fesom.1948.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
+
+  FESOM2_Pi_mesh_salt:
+    driver: netcdf
+    metadata:
+      zenodo_doi: 10.5281/zenodo.3819896
+    args:
+      urlpath:
+        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_Pi_mesh/salt.fesom.1948.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: by_coords
