@@ -21,3 +21,16 @@ sources:
         argkey: urlpath
         regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
 
+  Salt_FESOM2_1948:
+    driver: netcdf
+    description: "Salt from FESOM2 sample dataset"
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/salt.fesom.1948.nc"
+      xarray_kwargs:
+        decode_cf: False
+    cache:
+      - type: file
+        argkey: urlpath
+        regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
