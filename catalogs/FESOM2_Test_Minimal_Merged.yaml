@@ -1,0 +1,39 @@
+metadata:
+  version: 1
+
+plugins:
+  source:
+      - module: intake_xarray
+
+sources:
+
+  FESOM2_sample:
+    driver: netcdf
+    description: 'FESOM2 Sample dataset'
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: 
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/temp.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/salt.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/u.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/v.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/w.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/a_ice.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/m_ice.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/sst.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/ssh.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vice.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/uice.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/MLD1.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Kv.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vnod.fesom.1948.nc'
+        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/unod.fesom.1948.nc'   
+      xarray_kwargs:
+        decode_cf: False
+        combine: 'by_coords'
+    cache:
+      - type: file
+        argkey: urlpath
+        regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
