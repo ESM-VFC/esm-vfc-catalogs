@@ -16,7 +16,7 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/temp.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
     cache:
       - type: file
         argkey: urlpath
@@ -31,7 +31,7 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/salt.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
     cache:
       - type: file
         argkey: urlpath
@@ -46,7 +46,6 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/u.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -61,7 +60,6 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/v.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -76,7 +74,6 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/w.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -84,14 +81,13 @@ sources:
 
   A_ICE_FESOM2_1948:
     driver: netcdf
-    description: "A_Ice from FESOM2 sample dataset"
+    description: "Ice Concentration from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/a_ice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -99,14 +95,13 @@ sources:
 
   M_ICE_FESOM2_1948:
     driver: netcdf
-    description: "M_Ice from FESOM2 sample dataset"
+    description: "Ice Height from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/m_ice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -114,14 +109,13 @@ sources:
 
   VICE_FESOM2_1948:
     driver: netcdf
-    description: "Vice from FESOM2 sample dataset"
+    description: "V Ice Velocity from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -129,14 +123,13 @@ sources:
 
   UICE_FESOM2_1948:
     driver: netcdf
-    description: "Uice from FESOM2 sample dataset"
+    description: "U Ice Velocity from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/uice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -151,7 +144,6 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/sst.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -174,14 +166,13 @@ sources:
 
   MLD1_FESOM2_1948:
     driver: netcdf
-    description: "MLD1 from FESOM2 sample dataset"
+    description: "MLD from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/MLD1.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -189,14 +180,13 @@ sources:
 
   KV_FESOM2_1948:
     driver: netcdf
-    description: "Kv from FESOM2 sample dataset"
+    description: "Vertical Diffusivity from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Kv.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -204,14 +194,13 @@ sources:
 
   AV_FESOM2_1948:
     driver: netcdf
-    description: "Av from FESOM2 sample dataset"
+    description: "Vertical Mixing from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -219,14 +208,13 @@ sources:
 
   UNOD_FESOM2_1948:
     driver: netcdf
-    description: "Unod from FESOM2 sample dataset"
+    description: "U at node from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/unod.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
@@ -234,14 +222,13 @@ sources:
 
   VNOD_FESOM2_1948:
     driver: netcdf
-    description: "Vnod from FESOM2 sample dataset"
+    description: "V at node from FESOM2 sample dataset"
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vnod.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
     cache:
       - type: file
         argkey: urlpath
