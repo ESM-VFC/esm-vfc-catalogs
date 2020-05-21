@@ -13,10 +13,11 @@ sources:
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
-      urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/temp.fesom.1948.nc"
+      urlpath: 
+        - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/temp.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: 'nested'
+        combine: 'by-coords'
     cache:
       - type: file
         argkey: urlpath
