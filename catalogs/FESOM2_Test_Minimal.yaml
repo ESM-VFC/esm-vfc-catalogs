@@ -17,7 +17,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/temp.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: 'by-coords'
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -33,7 +35,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/salt.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: 'by-coords'
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -49,7 +53,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/u.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: 'by-coords'
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -65,6 +71,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/v.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -80,6 +89,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/w.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -95,7 +107,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/a_ice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested' 
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -111,7 +125,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/m_ice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -127,7 +143,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -143,7 +161,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/uice.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -159,7 +179,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/sst.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -175,7 +197,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/ssh.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -191,7 +215,26 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/MLD1.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
+    cache:
+      - type: file
+        argkey: urlpath
+        regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
+
+  AV_FESOM2_1948:
+    driver: netcdf
+    description: "Vertical Mixing from FESOM2 sample dataset"
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc"
+      xarray_kwargs:
+        decode_cf: False
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -207,26 +250,14 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Kv.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
         regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
 
-  AV_FESOM2_1948:
-    driver: netcdf
-    description: "Vertical Mixing from FESOM2 sample dataset"
-    metadata:
-      zenodo_doi: "10.5281/zenodo.3819896"
-    args:
-      urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc"
-      xarray_kwargs:
-        decode_cf: False
-        combine: by-coords
-    cache:
-      - type: file
-        argkey: urlpath
-        regex: 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b'
 
   UNOD_FESOM2_1948:
     driver: netcdf
@@ -237,7 +268,9 @@ sources:
       urlpath: "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/unod.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
@@ -253,7 +286,9 @@ sources:
         - "https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vnod.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
-        combine: by-coords
+        combine: 'nested'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath

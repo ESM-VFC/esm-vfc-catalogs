@@ -23,16 +23,18 @@ sources:
         - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/m_ice.fesom.1948.nc'
         - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/sst.fesom.1948.nc'
         - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/ssh.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vice.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/uice.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/MLD1.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Kv.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vnod.fesom.1948.nc'
-        #- 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/unod.fesom.1948.nc'   
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vice.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/uice.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/MLD1.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Kv.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/Av.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/vnod.fesom.1948.nc'
+        - 'https://zenodo.org/api/files/718572ad-74ff-44ea-8d73-d385e74fc06b/unod.fesom.1948.nc'   
       xarray_kwargs:
         decode_cf: False
         combine: 'by_coords'
+      storage_options:
+        block_size: 0
     cache:
       - type: file
         argkey: urlpath
