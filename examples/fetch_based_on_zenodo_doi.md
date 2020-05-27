@@ -23,6 +23,8 @@ Then, we want to be able to download all files from Zenodo that match files real
 ```python
 %%file fesom2_catalog.yaml
 
+## TODO: We'd like to only specify the zenodo_doi
+
 metadata:
   version: 1
 
@@ -38,27 +40,75 @@ sources:
     metadata:
       zenodo_doi: "10.5281/zenodo.3819896"
     args:
-      # TODO: Can we use a glob-style pattern here? --> .../*.fesom.????.nc
-      urlpath: 
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/temp.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/salt.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/u.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/v.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/w.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/a_ice.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/m_ice.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/vice.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/uice.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/sst.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/ssh.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/MLD1.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/Kv.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/Av.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/vnod.fesom.1948.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/unod.fesom.1948.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/*.fesom.1948.nc"
       xarray_kwargs:
         decode_cf: False
         combine: 'by_coords'
+
+  # CAUTION: The following is broken with current intake caching!
+            
+  MESH_NOD2D:
+    driver: csv
+    description: 'Node locations of sample FESOM pi mesh'
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      csv_kwargs:
+        delim_whitespace: True
+        skiprows: 1
+        names:
+          - "node_number"
+          - "x"
+          - "y"
+          - "flag"
+    cache:
+      - type: compressed
+        decomp: tgz
+        argkey: urlpath
+        regex_filter: 'nod2d.out'
+
+  MESH_ELEM2D:
+    driver: csv
+    description: 'Element locations of sample FESOM pi mesh'
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      csv_kwargs:
+        delim_whitespace: True
+        skiprows: 1
+        names:
+          - "first_elem"
+          - "second_elem"
+          - "third_elem"
+    cache:
+      - type: compressed
+        decomp: tgz
+        argkey: urlpath
+        regex_filter: 'elem2d.out'
+            
+  MESH_AUX3D:
+    driver: csv
+    description: 'Topography of sample FESMOM pi mesh'
+    metadata:
+      zenodo_doi: "10.5281/zenodo.3819896"
+    args:
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      csv_kwargs:
+        delim_whitespace: True
+        skiprows: 49
+        names:
+          - "topo"
+    cache:
+      - type: compressed
+        decomp: tgz
+        argkey: urlpath
+        regex_filter: 'aux3d.out'
+```
+
+```python
+!rm -rf ~/.intake
 ```
 
 ## Imports and paths
@@ -97,10 +147,6 @@ cat = intake.open_catalog("fesom2_catalog.yaml")
 
 ```python
 list(cat)
-```
-
-```python
-cat["FESOM2_sample"]
 ```
 
 ## How to pre-fetch the data?
@@ -215,14 +261,31 @@ def download_zenodo_files(
 ## Download data
 
 ```python
+%%time
+
 download_zenodo_files(
-    zenodo_doi=cat["FESOM2_sample"].metadata["zenodo_doi"],
-    target_directory=Path(list(cat["FESOM2_sample"].urlpath)[0]).parent,
+    zenodo_doi=cat["MESH_AUX3D"].metadata["zenodo_doi"],
+    target_directory=Path(cat["MESH_AUX3D"].urlpath).parent,
     force_download=False, 
-    filter_pattern="*.fesom.????.nc"
+    filter_pattern="*"
 )
 ```
 
 ```python
-cat["FESOM2_sample"].to_dask()
+cat["MESH_AUX3D"].cache[0].clear_all()
+cat["MESH_AUX3D"].read()
+```
+
+```python
+cat["MESH_NOD2D"].cache[0].clear_all()
+cat["MESH_NOD2D"].read()
+```
+
+```python
+cat["MESH_ELEM2D"].cache[0].clear_all()
+cat["MESH_ELEM2D"].read()
+```
+
+```python
+print(cat["FESOM2_sample"].read())
 ```
