@@ -1,10 +1,49 @@
+import fnmatch
+import logging
 import os
 from pathlib import Path
 import pycurl
+import requests
 from urllib.parse import urlparse
 import warnings
 
 from .aux import file_has_checksum
+
+
+def download_zenodo_files_for_entry(cat_entry, force_download=False):
+    """Download files for entry from Zenodo.
+
+    Parameters
+    ----------
+    cat_entry : intake catalaog entry
+        Catalog entry to download for. Needs `.metadata.zenodo_doi` and `.args.urlpath`.
+        The DOI will be used to find out from where to download the data. The `urlpath`
+        will be used to find out which files to download and where to store the
+        downloaded files.
+    force_download : bool
+        Download even if files already exist?  Defaults to False.
+
+    Returns
+    -------
+    List of file paths that have been downloaded.
+    """
+    # if URLPATH is a string, just pass the `Path(urlpath).name` as filter
+    # otherwise, iterate over urlpaths
+    if isinstance(cat_entry.urlpath, str):
+        download_zenodo_files(
+            zenodo_doi=cat_entry.metadata["zenodo_doi"],
+            target_directory=str(Path(cat_entry.urlpath).parent),
+            filter_pattern=str(Path(cat_entry.urlpath).name),
+            force_download=force_download,
+        )
+    else:  # not checking if iterable
+        for urlpath in cat_entry.urlpath:
+            download_zenodo_files(
+                zenodo_doi=cat_entry.metadata["zenodo_doi"],
+                target_directory=str(Path(urlpath).parent),
+                filter_pattern=str(Path(urlpath).name),
+                force_download=force_download,
+            )
 
 
 def download_zenodo_files(
@@ -42,7 +81,12 @@ def download_zenodo_files(
 
     # get list of source urls filtered for the file_pattern
     filtered_files = list(
-        filter(lambda fn: fnmatch.fnmatch(fn["key"], filter_pattern), r.json()["files"])
+        filter(
+            lambda fn: (
+                (filter_pattern is None) or (fnmatch.fnmatch(fn["key"], filter_pattern))
+            ),
+            r.json()["files"],
+        )
     )
     all_urls = [file["links"]["self"] for file in filtered_files]
     all_target_files = [
@@ -67,7 +111,9 @@ def download_zenodo_files(
                 c.close()
                 logging.debug(f"download of {url} to {file} done")
             # check file if it was downloaded
-            if not file_has_checksum(file_name=file, checksum=checksum):
+            if file_has_checksum(file_name=file, checksum=checksum):
+                logging.debug(f"checksum {checksum} for {file} matches.")
+            else:
                 raise ValueError(f"Checksum for {file} does not match {checksum}")
 
     return all_target_files
