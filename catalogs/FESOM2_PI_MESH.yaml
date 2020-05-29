@@ -19,7 +19,6 @@ sources:
         combine: 'by_coords'
 
   # CAUTION: The following is broken with current intake caching!
-
   MESH_NOD2D:
     driver: csv
     description: 'Node locations of sample FESOM pi mesh'

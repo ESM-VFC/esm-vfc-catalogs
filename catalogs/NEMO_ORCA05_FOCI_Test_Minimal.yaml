@@ -11,8 +11,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_T.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_T.nc"
@@ -24,8 +23,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_U.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_U.nc"
@@ -37,8 +35,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_V.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_V.nc"
@@ -50,8 +47,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_W.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_grid_W.nc"
@@ -63,8 +59,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_icemod.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_icemod.nc"
@@ -76,8 +71,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_ptrc_T.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/FOCI1.14-TEST.2020.04.1_1m_20110101_20111231_ptrc_T.nc"
@@ -89,8 +83,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/mesh_mask.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/mesh_mask.nc"
@@ -102,8 +95,7 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 FOCI Test Data Files (see: https://doi.org/10.5281/zenodo.3755721)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755721/files/new_maskglo.nc"
+      zenodo_doi: "10.5281/zenodo.3755721"
     args:
       urlpath:
         - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_FOCI_Test_Minimal/new_maskglo.nc"
