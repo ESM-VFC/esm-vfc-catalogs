@@ -28,10 +28,6 @@ def download_zenodo_files(
     list of paths : all target files.
 
     """
-    #     # check if we filter files
-    #     if filter_files is not None:
-    #         raise NotImplementedError("Filtering is not implemented yet")
-
     # get zenodo record ID from doi
     zenodo_record = zenodo_doi.split(".")[-1]
     logging.debug(f"will download record {zenodo_record}")
@@ -44,7 +40,7 @@ def download_zenodo_files(
 
     # TODO: Check that we got the correct DOI
 
-    # get list of source urls
+    # get list of source urls filtered for the file_pattern
     filtered_files = list(
         filter(lambda fn: fnmatch.fnmatch(fn["key"], filter_pattern), r.json()["files"])
     )
@@ -60,6 +56,7 @@ def download_zenodo_files(
 
     # download all wanted files with curl
     for url, file, checksum in zip(all_urls, all_target_files, all_checksums):
+        # only download if file does not exist and not forced
         if not file.exists() or force_download:
             with open(file, "wb") as f:
                 logging.debug(f"will download {url} to {file}")
@@ -69,15 +66,15 @@ def download_zenodo_files(
                 c.perform()
                 c.close()
                 logging.debug(f"download of {url} to {file} done")
-        # This checks all files even if they were not downloaded:
-        if not file_has_checksum(file_name=file, checksum=checksum):
-            raise ValueError(f"Checksum for {file} does not match {checksum}")
+            # check file if it was downloaded
+            if not file_has_checksum(file_name=file, checksum=checksum):
+                raise ValueError(f"Checksum for {file} does not match {checksum}")
 
     return all_target_files
 
 
 def fetch_zenodo_data(catalog_entry, force_download=False):
-    """Fetch data for `catalog_entry` from Zenodo.
+    """DEPRECATED: Fetch data for `catalog_entry` from Zenodo.
 
     WARNING: This function will be removed from future versions of
     esmvfc_cattools. Use download_zenodo_files instead.
