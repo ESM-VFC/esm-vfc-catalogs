@@ -11,13 +11,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_T.nc"
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_T.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_T.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_T.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_????????_????????_grid_T.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -26,13 +22,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_U.nc"
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_U.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_U.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_U.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_????????_????????_grid_U.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -41,13 +33,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_V.nc"
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_V.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_V.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_V.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_????????_????????_grid_V.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -56,13 +44,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_W.nc"
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_W.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_grid_W.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_grid_W.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_????????_????????_grid_W.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -71,13 +55,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_icemod.nc"
-        - "https://zenodo.org/record/3755517/files/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_icemod.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19900101_19901231_icemod.nc"
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_19910101_19911231_icemod.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/ORCA05.L46.LIM2vp.CORE.XIOS2-TEST.2020.04.1_5d_????????_????????_icemod.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
@@ -86,11 +66,9 @@ sources:
     driver: netcdf
     description: 'NEMO ORCA05 Test Data Files (see: https://doi.org/10.5281/zenodo.3755517)'
     metadata:
-      data_urls:
-        - "https://zenodo.org/record/3755517/files/mesh_mask.nc"
+      zenodo_doi: "10.5281/zenodo.3755517"
     args:
-      urlpath:
-        - "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/mesh_mask.nc"
+      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/NEMO_ORCA05_Test/mesh_mask.nc"
       xarray_kwargs:
         decode_cf: False
         combine: by_coords
