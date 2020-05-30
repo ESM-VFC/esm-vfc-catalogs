@@ -11,7 +11,7 @@ sources:
     driver: netcdf
     description: 'FESOM2 pi mesh Sample dataset'
     metadata:
-      zenodo_doi: "10.5281/zenodo.3819896"
+      zenodo_doi: "10.5281/zenodo.3865567"
     args:
       urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/*.fesom.1948.nc"
       xarray_kwargs:
@@ -23,57 +23,34 @@ sources:
     driver: csv
     description: 'Node locations of sample FESOM pi mesh'
     metadata:
-      zenodo_doi: "10.5281/zenodo.3819896"
+      zenodo_doi: "10.5281/zenodo.3865567"
     args:
-      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      urlpath: "simplecache::zip://pi/nod2d.out::file://{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.zip"
       csv_kwargs:
         delim_whitespace: True
         skiprows: 1
-        names:
-          - "node_number"
-          - "x"
-          - "y"
-          - "flag"
-    cache:
-      - type: compressed
-        decomp: tgz
-        argkey: urlpath
-        regex_filter: 'nod2d.out'
+        names: ["node_number", "x", "y", "flag"]
 
   MESH_ELEM2D:
     driver: csv
     description: 'Element locations of sample FESOM pi mesh'
     metadata:
-      zenodo_doi: "10.5281/zenodo.3819896"
+      zenodo_doi: "10.5281/zenodo.3865567"
     args:
-      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      urlpath: "simplecache::zip://pi/elem2d.out::file://{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.zip"
       csv_kwargs:
         delim_whitespace: True
         skiprows: 1
-        names:
-          - "first_elem"
-          - "second_elem"
-          - "third_elem"
-    cache:
-      - type: compressed
-        decomp: tgz
-        argkey: urlpath
-        regex_filter: 'elem2d.out'
+        names: ["first_elem", "second_elem", "third_elem"]
 
   MESH_AUX3D:
     driver: csv
     description: 'Topography of sample FESMOM pi mesh'
     metadata:
-      zenodo_doi: "10.5281/zenodo.3819896"
+      zenodo_doi: "10.5281/zenodo.3865567"
     args:
-      urlpath: "{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.tar.gz"
+      urlpath: "simplecache::zip://pi/aux3d.out::file://{{env('ESM_VFC_DATA_DIR')}}/FESOM2_PI_MESH/pi.zip"
       csv_kwargs:
         delim_whitespace: True
         skiprows: 49
-        names:
-          - "topo"
-    cache:
-      - type: compressed
-        decomp: tgz
-        argkey: urlpath
-        regex_filter: 'aux3d.out'
+        names: ["topo", ]
