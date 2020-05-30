@@ -3,11 +3,27 @@ import logging
 import os
 from pathlib import Path
 import pycurl
+import re
 import requests
 from urllib.parse import urlparse
 import warnings
 
 from .aux import file_has_checksum
+
+
+def _parse_urlpath(urlpath):
+    """Parse urlpath and find the file part.
+
+    We assume that urlpaths either are just a path or that they are composed
+    by url chaining (see
+    <https://filesystem-spec.readthedocs.io/en/latest/features.html#url-chaining>)
+    and look something like "simplecache::zip://data.csv::file://archive.zip"
+    with the file:// block at the end.
+    """
+    try:
+        return re.search(r"file://(.*)", urlpath).group(1)
+    except AttributeError as e:
+        return urlpath
 
 
 def download_zenodo_files_for_entry(cat_entry, force_download=False):
@@ -27,23 +43,27 @@ def download_zenodo_files_for_entry(cat_entry, force_download=False):
     -------
     List of file paths that have been downloaded.
     """
-    # if URLPATH is a string, just pass the `Path(urlpath).name` as filter
+    # if urlpath is a string, just parse and pass the `Path(urlpath).name`
+    # as filter pattern
     # otherwise, iterate over urlpaths
     if isinstance(cat_entry.urlpath, str):
-        download_zenodo_files(
+        urlpath = _parse_urlpath(cat_entry.urlpath)
+        target_files = download_zenodo_files(
             zenodo_doi=cat_entry.metadata["zenodo_doi"],
-            target_directory=str(Path(cat_entry.urlpath).parent),
-            filter_pattern=str(Path(cat_entry.urlpath).name),
+            target_directory=str(Path(urlpath).parent),
+            filter_pattern=str(Path(urlpath).name),
             force_download=force_download,
         )
     else:  # not checking if iterable
         for urlpath in cat_entry.urlpath:
-            download_zenodo_files(
+            urlpath = _parse_urlpath(urlpath)
+            target_files = download_zenodo_files(
                 zenodo_doi=cat_entry.metadata["zenodo_doi"],
                 target_directory=str(Path(urlpath).parent),
                 filter_pattern=str(Path(urlpath).name),
                 force_download=force_download,
             )
+    return target_files
 
 
 def download_zenodo_files(
