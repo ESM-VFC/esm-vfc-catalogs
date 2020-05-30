@@ -16,3 +16,14 @@ sources:
       Bremerhaven, PANGAEA, https://doi.org/10.1594/PANGAEA.911224
     args:
       pangaea_doi: "10.1594/PANGAEA.911224"
+
+
+  Sea_Ice_MOSAIC_leg_1:
+    driver: pangaeapy
+    description: | 
+      Timofeeva, Anna; Smolyanitsky, Vasily; Bessonov, Vladimir; Petrovskiy,
+      Tomash (2020): Special sea ice observations aboard Akademik Fedorov 
+      MOSAiC leg 1, 2019-09-25 to 2019-10-20. 
+      PANGAEA, https://doi.pangaea.de/10.1594/PANGAEA.912021 (DOI registration in progress)
+    args:
+      pangaea_doi: "10.1594/PANGAEA.912021"
