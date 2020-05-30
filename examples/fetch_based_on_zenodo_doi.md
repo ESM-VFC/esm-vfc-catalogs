@@ -64,20 +64,13 @@ print(cat["FESOM2_sample"].read())
 ```
 
 ```python
-download_zenodo_files_for_entry(cat["MESH_AUX3D"])
+cat["MESH_AUX3D"].read()
 ```
 
 ```python
-cat["MESH_AUX3D"].cache[0].clear_all()  # see https://github.com/intake/intake/issues/499
-print(cat["MESH_AUX3D"].read())
-```
-
-```python
-cat["MESH_NOD2D"].cache[0].clear_all()  # see https://github.com/intake/intake/issues/499
 print(cat["MESH_NOD2D"].read())
 ```
 
 ```python
-cat["MESH_ELEM2D"].cache[0].clear_all()  # see https://github.com/intake/intake/issues/499
 print(cat["MESH_ELEM2D"].read())
 ```
