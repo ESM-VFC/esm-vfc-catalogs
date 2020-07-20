@@ -7,6 +7,7 @@ import re
 import requests
 from urllib.parse import urlparse
 import warnings
+from tqdm.auto import tqdm
 
 from .aux import file_has_checksum
 
@@ -122,14 +123,27 @@ def download_zenodo_files(
     for url, file, checksum in zip(all_urls, all_target_files, all_checksums):
         # only download if file does not exist and not forced
         if not file.exists() or force_download:
-            with open(file, "wb") as f:
-                logging.debug(f"will download {url} to {file}")
-                c = pycurl.Curl()
-                c.setopt(c.URL, url)
-                c.setopt(c.WRITEDATA, f)
-                c.perform()
-                c.close()
-                logging.debug(f"download of {url} to {file} done")
+            print(f"will download {url} to {file}")
+            with tqdm(total=100, unit="B", unit_scale=True) as t_progress:
+
+                def _tqdm_progress_func(download_t, download_d, upload_t, upload_d):
+                    # if not set yet, set total download size
+                    if t_progress.total != download_t:
+                        t_progress.reset(download_t)
+                    # update to downloaded volume and refresh
+                    t_progress.n = download_d
+                    t_progress.refresh()
+
+                with open(file, "wb") as f:
+                    c = pycurl.Curl()
+                    c.setopt(c.URL, url)
+                    c.setopt(c.WRITEDATA, f)
+                    c.setopt(c.NOPROGRESS, False)
+                    c.setopt(c.XFERINFOFUNCTION, _tqdm_progress_func)
+                    c.perform()
+                    c.close()
+
+            logging.debug(f"download of {url} to {file} done")
             # check file if it was downloaded
             if file_has_checksum(file_name=file, checksum=checksum):
                 logging.debug(f"checksum {checksum} for {file} matches.")
