@@ -26,10 +26,6 @@ import logging
 ```
 
 ```python
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-```
-
-```python
 # parameters
 data_path = Path("../esm_vfc_data/").resolve()
 catalog_file = Path("../catalogs/FESOM2_PI_MESH.yaml")
@@ -53,7 +49,7 @@ list(cat)
 for entry in [cat[name] for name in cat]:
     download_zenodo_files_for_entry(
         entry,
-        force_download=False
+        force_download=True
     )
 ```
 
